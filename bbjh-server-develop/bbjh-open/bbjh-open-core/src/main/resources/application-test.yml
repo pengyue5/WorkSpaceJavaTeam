@@ -1,0 +1,42 @@
+#debug: true
+logging:
+  path: V1.0.0/logs
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    name: druid
+    password: Scxx!#%&9
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://211.143.54.76:3306/bbjh_test?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+    username: scxx
+  redis:
+    database: 0
+    host: localhost
+    port: 6399
+    password: scxx
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 10000ms
+
+  cloud:
+    inetutils:
+      ignored-interfaces: #忽略docker0网卡以及 veth开头的网卡
+        - docker0
+        - veth.*
+    consul:
+      enabled: true
+      host: dev.bbjh.consul.com
+      port: 8500
+      discovery:
+        enabled: true
+        prefer-ip-address: true
+        service-name: bbjh-open
+        instance-id: ${spring.application.name}-${random.uuid}
+        hostname: dev.bbjh.core.com
+        tags:
+          - java
+          - service

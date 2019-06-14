@@ -1,0 +1,39 @@
+server:
+  port: 51001
+spring:
+  application:
+    name: bbjh-gateway
+  profiles:
+    active: @profileActive@
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6399
+    password: guanlouyi
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 10000ms
+
+zuul:
+  routes:
+    bbjh-admin:
+      serviceId: bbjh-admin
+      path: /admin/**
+      url: http://127.0.0.1:53001/admin/
+    bbjh-app:
+      serviceId: bbjh-app
+      path: /app/**
+      url: http://127.0.0.1:54001/app/
+    bbjh-open:
+      serviceId: bbjh-open
+      path: /open/**
+      url: http://127.0.0.1:55001/
+  ignored-services: "*"

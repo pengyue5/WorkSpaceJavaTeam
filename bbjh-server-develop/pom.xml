@@ -60,7 +60,7 @@
         <libphonenumber.version>6.3</libphonenumber.version>
         <geocoder.version>2.15</geocoder.version>
         <java-jwt.version>3.8.0</java-jwt.version>
-        <xxl-job.version>2.0.2</xxl-job.version>
+        <xxl-job.version>2.3.1</xxl-job.version>
 
         <!-- 分布式服务部分 -->
 

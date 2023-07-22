@@ -45,7 +45,7 @@
 
         <!-- 数据库部分 -->
         <mapper.version>3.4.2</mapper.version>
-        <pagehelper.version>5.1.8</pagehelper.version>
+        <pagehelper.version>5.3.1</pagehelper.version>
         <mapper-spring-boot-starter.version>2.1.4</mapper-spring-boot-starter.version>
 
         <pagehelper-spring-boot-starter.version>1.2.10</pagehelper-spring-boot-starter.version>
